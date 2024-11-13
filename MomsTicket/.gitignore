@@ -18,7 +18,11 @@ bin/
 !**/src/test/**/bin/
 
 ### IntelliJ IDEA ###
-application.properties
+git rm --cached filename
+
+git rm --cached -r .
+git add .
+git commit -m "Untrack files in .gitignore"
 .idea
 *.iws
 *.iml
