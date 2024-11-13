@@ -18,7 +18,7 @@ bin/
 !**/src/test/**/bin/
 
 ### IntelliJ IDEA ###
-git rm --cached filename
+git rm --cached application.properties
 
 git rm --cached -r .
 git add .
