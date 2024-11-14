@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.Instant;
 
@@ -12,6 +13,7 @@ import java.time.Instant;
 @Entity
 public class Matching {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "matchingID", nullable = false)
     private Integer id;
 
@@ -26,15 +28,16 @@ public class Matching {
     private User agentID;
 
     @NotNull
-    @Column(name = "matchingStatus", nullable = false)
-    private Byte matchingStatus;
+    @Column(name = "matchingStatus", nullable = false, columnDefinition = "int default 0")
+    private Integer matchingStatus;
 
     @Column(name = "matchingDate")
+    @CreationTimestamp
     private Instant matchingDate;
 
     @NotNull
-    @Column(name = "isRematch", nullable = false)
-    private Byte isRematch;
+    @Column(name = "isRematch", nullable = false, columnDefinition = "int default 0")
+    private Integer isRematch;
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

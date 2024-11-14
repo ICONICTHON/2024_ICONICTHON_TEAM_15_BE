@@ -1,6 +1,7 @@
 package Team_15.MomsTicket.Controller;
 
 import Team_15.MomsTicket.DTO.TicketingFormDTO;
+import Team_15.MomsTicket.Entity.Matching;
 import Team_15.MomsTicket.Entity.Ticketing;
 import Team_15.MomsTicket.Entity.User;
 import Team_15.MomsTicket.Service.TicketingService;
@@ -48,6 +49,13 @@ public class TicketingController {
     @PutMapping("/ticketing/submit/{schedule_id}")
     public ResponseEntity<Map<String, Object>> submitTicketing(HttpSession session, @PathVariable("schedule_id") int schedule_id, @RequestBody TicketingFormDTO formDTO) {
         Map<String, Object> response = new LinkedHashMap<>();
+
+        // for test
+        User loginUser = new User();
+        loginUser.setId(67890L);
+        loginUser.setUserName("testUser2");
+        session.setAttribute("userInfo", loginUser);
+
         Object currentUser = session.getAttribute("userInfo");
 
         try {
@@ -57,6 +65,31 @@ public class TicketingController {
             response.put("submitted_user", currentUser);
             return ResponseEntity.status(HttpStatus.OK).body(response);
         } catch(Exception e) {
+            response.put("code", "Error");
+            response.put("message", e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+        }
+    }
+
+    @PutMapping("/ticketing/match/{ticketing_id}")
+    public ResponseEntity<?> matchTicketing(HttpSession session, @PathVariable("ticketing_id") int ticketing_id) {
+        Map<String, Object> response = new LinkedHashMap<>();
+
+        // for test
+        User loginUser = new User();
+        loginUser.setId(33344L);
+        loginUser.setUserName("안성현");
+        session.setAttribute("userInfo", loginUser);
+
+        Object agentUser = session.getAttribute("userInfo");
+
+        try {
+            Matching match = ticketingService.matchTicketing((User) agentUser, ticketing_id);
+            response.put("code", "SU");
+            response.put("message", "Success.");
+            response.put("matched", match);
+            return ResponseEntity.status(HttpStatus.OK).body(response);
+        } catch (Exception e) {
             response.put("code", "Error");
             response.put("message", e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
