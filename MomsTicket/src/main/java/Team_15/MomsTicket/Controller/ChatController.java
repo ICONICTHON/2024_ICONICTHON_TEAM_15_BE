@@ -1,6 +1,7 @@
 package Team_15.MomsTicket.Controller;
 
 import Team_15.MomsTicket.DTO.ChatMessageDTO;
+import Team_15.MomsTicket.Entity.ChatRoom;//추가
 import Team_15.MomsTicket.Service.ChatMessageService;
 import Team_15.MomsTicket.Config.MessagePublisher;
 import Team_15.MomsTicket.Entity.Message;
@@ -29,7 +30,7 @@ public class ChatController {
     }
 
     @GetMapping("/history/{roomId}")
-    public List<Message> getChatHistory(@PathVariable Long roomId) {
+    public List<Message> getChatHistory(@PathVariable /*Long*/ChatRoom roomId) {
         return chatMessageService.getChatHistory(roomId);
     }
 }

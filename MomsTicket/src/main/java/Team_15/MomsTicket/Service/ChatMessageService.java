@@ -1,5 +1,6 @@
 package Team_15.MomsTicket.Service;
 
+import Team_15.MomsTicket.Entity.ChatRoom;//추가
 import Team_15.MomsTicket.Entity.Message;
 import Team_15.MomsTicket.Repository.ChatMessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,9 @@ public class ChatMessageService {
         chatMessageRepository.save(message);
     }
 
-    public List<Message> getChatHistory(Long roomId) {
-        return chatMessageRepository.findByRoomId(roomId);
+    public List<Message> getChatHistory(/*Long roomId*/ChatRoom chatRoomID) {
+//        return chatMessageRepository.findByRoomId(roomId);
+        return chatMessageRepository.findByChatRoomID(chatRoomID);
+
     }
 }
