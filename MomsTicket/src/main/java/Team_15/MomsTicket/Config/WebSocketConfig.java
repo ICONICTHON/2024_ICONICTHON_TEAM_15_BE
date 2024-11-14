@@ -12,9 +12,10 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
-        // 메세지 브로드캐스팅 경로 - 메시지 브로커가 /topic으로 시작하는 메시지를 클라이언트로 라우팅
+        // 메세지 브로드캐스팅 경로 - 메시지 브로커가 /sub (topic)으로 시작하는 메시지를 클라이언트로 라우팅
         config.enableSimpleBroker("/sub");
-        // 전송 기본 경로 - 클라이언트에서 메시지를 송신할 때 /app으로 시작하는 메시지를 받아들임
+
+        // 전송 기본 경로 - 클라이언트에서 메시지를 송신할 때 /pub (app)으로 시작하는 메시지를 받아들임
         config.setApplicationDestinationPrefixes("/pub");
     }
 

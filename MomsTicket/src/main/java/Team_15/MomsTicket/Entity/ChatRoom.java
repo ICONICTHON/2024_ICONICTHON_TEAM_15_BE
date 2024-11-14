@@ -17,9 +17,9 @@ public class ChatRoom {
     private Integer id;
 
     // 채팅방 유형 (안쓸 것)
-    @NotNull
-    @Column(name = "chatRoomType", nullable = false)
-    private Byte chatRoomType;
+//    @NotNull
+//    @Column(name = "chatRoomType", nullable = false)
+//    private Byte chatRoomType;
 
     @Size(max = 255)
     @NotNull
@@ -34,15 +34,15 @@ public class ChatRoom {
     @Column(name = "createdDate", nullable = false)
     private Instant createdDate;
 
-    @NotNull
-    // 안 씀
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "recruitmentID", nullable = false)
-    private Recruitment recruitmentID;
+//    @NotNull
+//    // 안 씀
+//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+//    @JoinColumn(name = "recruitmentID", nullable = false)
+//    private Recruitment recruitmentID;
 
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "scheduleID", nullable = false)
-    private Schedule scheduleID;
+//    @NotNull
+//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+//    @JoinColumn(name = "scheduleID", nullable = false)
+//    private Schedule scheduleID;
 
 }

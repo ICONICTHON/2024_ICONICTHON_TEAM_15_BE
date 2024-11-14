@@ -18,7 +18,7 @@ public class RedisConfig {
     @Bean
     // 채팅방을 위한 채널 설정
     public ChannelTopic channelTopic() {
-        return new ChannelTopic("chatroom");
+        return new ChannelTopic("chat");
     }
 
     @Bean

@@ -10,10 +10,9 @@ import java.sql.Timestamp;
 @Setter
 
 public class ChatMessageDTO {
-    private String messageId;
     private String content;
-    private String chatRoomID;
-    private String senderID;
+    private Integer chatRoomID;
+    private Long senderID;
     private Timestamp sendDate;
 
 }
