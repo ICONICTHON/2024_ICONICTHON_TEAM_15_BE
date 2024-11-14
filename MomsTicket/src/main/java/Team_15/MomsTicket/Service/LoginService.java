@@ -115,5 +115,8 @@ public class LoginService {
         return userInfo;
     }
 
+    public void setIdol(User user, int idol_id) {
+        userRepository.setIdol(user.getId(), idol_id);
+    }
 }
 

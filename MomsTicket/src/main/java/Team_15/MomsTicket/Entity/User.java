@@ -30,7 +30,7 @@ public class User {
     private Idol idolID;
 
     @NotNull
-    @Column(name = "trustScore")
+    @Column(name = "trustScore", columnDefinition = "int default 50")
     private Integer trustScore;
 
     @Size(max = 20)

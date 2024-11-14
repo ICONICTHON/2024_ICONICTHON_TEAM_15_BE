@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
@@ -57,5 +58,25 @@ public class LoginController {
 
     }
 
+    @GetMapping("/{idol_id}")
+    public ResponseEntity<?> setIdol(@PathVariable("idol_id") int idol_id) {
+        Map<String, Object> response = new LinkedHashMap<>();
+        Object currentUser = session.getAttribute("userInfo");
+
+        try {
+            loginService.setIdol((User)currentUser, idol_id);
+            response.put("code", "SU");
+            response.put("message", "idol set successfully.");
+            response.put("loginUser", ((User) currentUser).getId());
+            response.put("userName", ((User) currentUser).getUserName());
+            response.put("idol_id", idol_id);
+            return ResponseEntity.status(HttpStatus.OK).body(response);
+        } catch (Exception e) {
+            response.put("code", "Error");
+            response.put("message", e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+        }
+
+    }
 }
 
