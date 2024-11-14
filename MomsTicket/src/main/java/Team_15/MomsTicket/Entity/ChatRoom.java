@@ -16,6 +16,7 @@ public class ChatRoom {
     @Column(name = "chatRoomID", nullable = false)
     private Integer id;
 
+    // 채팅방 유형 (안쓸 것)
     @NotNull
     @Column(name = "chatRoomType", nullable = false)
     private Byte chatRoomType;
@@ -34,6 +35,7 @@ public class ChatRoom {
     private Instant createdDate;
 
     @NotNull
+    // 안 씀
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "recruitmentID", nullable = false)
     private Recruitment recruitmentID;

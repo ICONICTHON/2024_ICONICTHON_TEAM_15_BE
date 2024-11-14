@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="IU-242.23726.103">
+    <data-source name="IdolBom@db-2vld6e-kr.vpc-pub-cdb.ntruss.com" uuid="fc86350c-0e55-47d4-8638-1b770d7a8ccf">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MYSQL" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>admin1</user-name>
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>
