@@ -25,12 +25,12 @@ public class User {
     @Column(name = "profileImage")
     private String profileImage;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "idolID")
     private Idol idolID;
 
     @NotNull
-    @Column(name = "trustScore")
+    @Column(name = "trustScore", columnDefinition = "int default 50")
     private Integer trustScore;
 
     @Size(max = 20)
@@ -40,5 +40,4 @@ public class User {
     @Size(max = 100)
     @Column(name = "bio", length = 100)
     private String bio;
-
 }

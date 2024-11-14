@@ -24,12 +24,12 @@ public class Message {
     private Instant sendDate;
 
     @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "chatRoomID", nullable = false)
     private ChatRoom chatRoomID;
 
     @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "senderID", nullable = false)
     private User senderID;
 
