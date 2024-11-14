@@ -50,11 +50,6 @@ public class TicketingController {
     public ResponseEntity<Map<String, Object>> submitTicketing(HttpSession session, @PathVariable("schedule_id") int schedule_id, @RequestBody TicketingFormDTO formDTO) {
         Map<String, Object> response = new LinkedHashMap<>();
         System.out.println(formDTO);
-        // for test
-        User loginUser = new User();
-        loginUser.setId(67890L);
-        loginUser.setUserName("testUser2");
-        session.setAttribute("userInfo", loginUser);
 
         Object currentUser = session.getAttribute("userInfo");
         try {
@@ -73,13 +68,6 @@ public class TicketingController {
     @PutMapping("/ticketing/match/{ticketing_id}")
     public ResponseEntity<?> matchTicketing(HttpSession session, @PathVariable("ticketing_id") int ticketing_id) {
         Map<String, Object> response = new LinkedHashMap<>();
-
-        // for test
-        User loginUser = new User();
-        loginUser.setId(33344L);
-        loginUser.setUserName("안성현");
-        session.setAttribute("userInfo", loginUser);
-
         Object agentUser = session.getAttribute("userInfo");
 
         try {

@@ -40,7 +40,6 @@ public class TicketingService {
 
     @Transactional
     public Matching matchTicketing(User agentUser, int ticketing_id) {
-        userRepository.save(agentUser); // for persistence
         Matching newMatch = new Matching();
         Ticketing ticketing_to_match = ticketingRepository.findById(ticketing_id)
                 .orElseThrow(() -> new NullPointerException("Ticketing with id " + ticketing_id + " not found"));
