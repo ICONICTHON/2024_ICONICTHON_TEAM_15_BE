@@ -69,4 +69,8 @@ public class TicketingService {
             return to_modify;
         }
     }
+
+    public List<Ticketing> getMyTicketingList(User user) {
+        return ticketingRepository.findAllByApplicantID(user);
+    }
 }

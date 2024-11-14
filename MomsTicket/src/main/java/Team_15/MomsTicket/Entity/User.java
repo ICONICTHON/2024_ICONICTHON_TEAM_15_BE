@@ -40,7 +40,4 @@ public class User {
     @Size(max = 100)
     @Column(name = "bio", length = 100)
     private String bio;
-
-    @Column(name = "noAgent", columnDefinition = "int default 0")
-    private Integer noAgent;
 }

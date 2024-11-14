@@ -118,5 +118,9 @@ public class LoginService {
     public void setIdol(User user, int idol_id) {
         userRepository.setIdol(user.getId(), idol_id);
     }
+
+    public User getMyInfo(Long id) {
+        return userRepository.findById(id).orElse(null);
+    }
 }
 
