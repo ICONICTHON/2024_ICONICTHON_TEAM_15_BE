@@ -36,10 +36,6 @@ public class Matching {
     private Instant matchingDate;
 
     @NotNull
-    @Column(name = "isRematch", nullable = false, columnDefinition = "int default 0")
-    private Integer isRematch = 0;
-
-    @NotNull
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "ticketingID", nullable = false)
     private Ticketing ticketingID;

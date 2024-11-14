@@ -13,6 +13,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 @RestController
@@ -25,7 +26,7 @@ public class TicketingService {
     private final ScheduleRepository scheduleRepository;
 
     public List<Ticketing> getTicketingList() {
-        return ticketingRepository.findAll();
+        return ticketingRepository.findNotMatched();
     }
 
     public void submitTicketing(User currentUser, int schedule_id, TicketingFormDTO formDTO) {
@@ -50,5 +51,22 @@ public class TicketingService {
         ticketingRepository.save(ticketing_to_match);
         matchingRepository.save(newMatch);
         return newMatch;
+    }
+
+    public Ticketing reMatchTicketing(int matching_id) {
+        Matching to_delete = matchingRepository.findById(matching_id).orElseThrow(
+                () -> new NullPointerException("Matching with id " + matching_id + " not found"));
+        Ticketing to_modify = ticketingRepository.findById(to_delete.getTicketingID().getId())
+                .orElseThrow(() -> new NullPointerException("Matching with id " + matching_id + " not found"));
+        if (to_modify.getIsRematch() == 1) {
+            throw new NullPointerException("Matching with id " + matching_id + "is already rematched.");
+        }
+        else {
+            to_modify.setIsRematch(1);
+            to_modify.setTicketingStatus(0);
+            ticketingRepository.save(to_modify);
+            matchingRepository.deleteById(matching_id);
+            return to_modify;
+        }
     }
 }

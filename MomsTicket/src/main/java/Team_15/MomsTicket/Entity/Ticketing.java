@@ -43,4 +43,7 @@ public class Ticketing {
     @Column(name = "ticketingStatus", nullable = false, columnDefinition = "int default 0")
     private int ticketingStatus = 0;
 
+    @NotNull
+    @Column(name = "isRematch", nullable = false, columnDefinition = "int default 0")
+    private Integer isRematch = 0;
 }
