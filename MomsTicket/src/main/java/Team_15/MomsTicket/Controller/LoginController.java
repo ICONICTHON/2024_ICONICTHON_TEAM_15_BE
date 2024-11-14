@@ -37,7 +37,7 @@ public class LoginController {
 
     // api with front (get code)
     @GetMapping("/login")
-    public ResponseEntity<?> RegisterLogin(@RequestParam(   "code") String code) throws IOException {
+    public ResponseEntity<?> RegisterLogin(@RequestParam("code") String code) throws IOException {
         Map<String, Object> response = new LinkedHashMap<>();
         User loginUser = new User();
 
@@ -66,7 +66,7 @@ public class LoginController {
 
     }
 
-    @GetMapping("/{idol_id}")
+    @GetMapping("/idol/{idol_id}")
     public ResponseEntity<?> setIdol(@PathVariable("idol_id") int idol_id) {
         Map<String, Object> response = new LinkedHashMap<>();
         Object currentUser = session.getAttribute("userInfo");
