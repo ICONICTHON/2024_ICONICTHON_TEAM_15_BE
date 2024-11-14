@@ -1,12 +1,12 @@
 package Team_15.MomsTicket.DTO;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.ToString;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
-@Data
-@Builder
+@Getter
+@Setter
 @ToString
+@NoArgsConstructor
 public class TicketingFormDTO {
     private Integer ticketNum;
     private String seatingType;

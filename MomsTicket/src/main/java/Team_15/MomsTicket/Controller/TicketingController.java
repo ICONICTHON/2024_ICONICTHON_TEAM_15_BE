@@ -5,7 +5,7 @@ import Team_15.MomsTicket.Entity.Matching;
 import Team_15.MomsTicket.Entity.Ticketing;
 import Team_15.MomsTicket.Entity.User;
 import Team_15.MomsTicket.Service.TicketingService;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import org.springframework.web.bind.annotation.RequestBody;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -49,7 +49,7 @@ public class TicketingController {
     @PutMapping("/ticketing/submit/{schedule_id}")
     public ResponseEntity<Map<String, Object>> submitTicketing(HttpSession session, @PathVariable("schedule_id") int schedule_id, @RequestBody TicketingFormDTO formDTO) {
         Map<String, Object> response = new LinkedHashMap<>();
-
+        System.out.println(formDTO);
         // for test
         User loginUser = new User();
         loginUser.setId(67890L);
@@ -57,7 +57,6 @@ public class TicketingController {
         session.setAttribute("userInfo", loginUser);
 
         Object currentUser = session.getAttribute("userInfo");
-
         try {
             ticketingService.submitTicketing((User)currentUser, schedule_id, formDTO);
             response.put("code", "SU");

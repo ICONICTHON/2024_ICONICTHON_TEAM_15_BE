@@ -25,7 +25,7 @@ public class User {
     @Column(name = "profileImage")
     private String profileImage;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "idolID")
     private Idol idolID;
 

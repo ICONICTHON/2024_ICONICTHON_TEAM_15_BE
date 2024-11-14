@@ -34,12 +34,12 @@ public class ChatRoom {
     private Instant createdDate;
 
     @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "recruitmentID", nullable = false)
     private Recruitment recruitmentID;
 
     @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "scheduleID", nullable = false)
     private Schedule scheduleID;
 

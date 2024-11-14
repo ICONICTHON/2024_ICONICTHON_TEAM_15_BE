@@ -12,12 +12,12 @@ public class ParticipantList {
     private ParticipantListId id;
 
     @MapsId("userID")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "userID", nullable = false)
     private User userID;
 
     @MapsId("recruitmentID")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "recruitmentID", nullable = false)
     private Recruitment recruitmentID;
 
