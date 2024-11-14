@@ -12,5 +12,6 @@ public class MessagePublisher {
 
     public void publish(String channel, String message) {
         redisTemplate.convertAndSend(channel, message);
+
     }
 }

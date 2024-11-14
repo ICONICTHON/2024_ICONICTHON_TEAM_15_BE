@@ -15,4 +15,10 @@ public class ChatMessageDTO {
     private Long senderID;
     private Timestamp sendDate;
 
+    public ChatMessageDTO(String content, Integer chatRoomID, Long senderID, Timestamp sendDate) {
+        this.content = content;
+        this.chatRoomID = chatRoomID;
+        this.senderID = senderID;
+        this.sendDate = sendDate;
+    }
 }
