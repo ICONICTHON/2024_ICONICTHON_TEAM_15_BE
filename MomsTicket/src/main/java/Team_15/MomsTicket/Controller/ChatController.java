@@ -3,6 +3,7 @@ package Team_15.MomsTicket.Controller;
 import Team_15.MomsTicket.Repository.UserRepository;
 import org.springframework.web.bind.annotation.PostMapping;
 import Team_15.MomsTicket.DTO.ChatMessageDTO;
+import Team_15.MomsTicket.DTO.ChatRoomListGetResponse;
 import Team_15.MomsTicket.Entity.ChatRoom;
 import Team_15.MomsTicket.Entity.User;
 import Team_15.MomsTicket.Service.ChatMessageService;
@@ -69,6 +70,21 @@ public class ChatController {
 
         userRepository.save(seller);  // 업데이트된 trustScore를 저장
         return ResponseEntity.ok("Feedback submitted successfully");
+    }
+
+    @PostMapping("/updateApplicantChatRoomList")
+    public void updateApplicantChatRoomList(@RequestParam Long userId, @RequestBody List<ChatRoomListGetResponse> applicantList) {
+        chatRoomService.updateApplicantChatRoomList(userId, applicantList);
+    }
+
+    @PostMapping("/updateAgentChatRoomList")
+    public void updateAgentChatRoomList(@RequestParam Long agentId, @RequestBody List<ChatRoomListGetResponse> agentList) {
+        chatRoomService.updateAgentChatRoomList(agentId, agentList);
+    }
+
+    @PostMapping("/createTemporaryChatRoom")
+    public ChatRoom createTemporaryChatRoom(@RequestParam Long userId, @RequestParam Long agentId) {
+        return chatRoomService.createTemporayChatRoom(userId, agentId);
     }
 }
 

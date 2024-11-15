@@ -18,7 +18,7 @@ public class RedisConfig {
     @Bean
     // 채팅방을 위한 채널 설정
     public ChannelTopic channelTopic() {
-        return new ChannelTopic("chat");
+        return new ChannelTopic("chatroom");
     }
 
     @Bean
@@ -42,6 +42,9 @@ public class RedisConfig {
         container.addMessageListener(listenerAdapterChatRoomList, new ChannelTopic("chatroom"));
         return container;
     }
+
+
+    /*
     @Bean
     // 실제 메시지를 처리하는 메서드인 sendMessage를 호출 (subscriber 설정)
     public MessageListenerAdapter messageListenerAdapter(RedisSubscriber subscriber) {
@@ -52,9 +55,12 @@ public class RedisConfig {
     public MessageListenerAdapter listenerAdapterChatRoomList(RedisSubscriber subscriber) {
         return new MessageListenerAdapter(subscriber, "sendRoomList");
     }
-
-
+*/
+    @Bean
+    public MessageListenerAdapter listenerAdapterOnMessage(RedisSubscriber subscriber) {
+        return new MessageListenerAdapter(subscriber, "onMessage");
+    }
     public void addChannel(RedisMessageListenerContainer redisMessageListenerContainer, RedisSubscriber subscriber, String chatRoomId) {
-        redisMessageListenerContainer.addMessageListener(messageListenerAdapter(subscriber), new ChannelTopic(chatRoomId));
+        redisMessageListenerContainer.addMessageListener(listenerAdapterOnMessage(subscriber), new ChannelTopic(chatRoomId));
             }
     }

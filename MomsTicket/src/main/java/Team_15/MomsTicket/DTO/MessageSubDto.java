@@ -1,8 +1,12 @@
 package Team_15.MomsTicket.DTO;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
-
+@Getter
+@Setter
 public class MessageSubDto {
     private String applicantID;
     private String agentID;
@@ -34,5 +38,11 @@ public class MessageSubDto {
 
     public void setAgentList(List<ChatRoomListGetResponse> agentList) {
         this.agentList = agentList;
+    }
+
+    public void setApplicantId(String string) {
+    }
+
+    public void setAgentId(String string) {
     }
 }
