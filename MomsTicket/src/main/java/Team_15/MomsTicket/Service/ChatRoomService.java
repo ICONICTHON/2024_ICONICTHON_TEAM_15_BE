@@ -48,7 +48,7 @@ public class ChatRoomService {
     }
 
 
-    public ChatRoom createTemporayChatRoom(Long userId, Long agentId) {
+    public ChatRoom createTemporaryChatRoom(Long userId, Long agentId) {
         Integer tempChatRoomId = 123;
 
         ChatRoom chatRoom = createChatRoom(tempChatRoomId);
