@@ -5,31 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bdd9da7b-a50c-4ba0-a0f8-a08eb5b2d148" name="변경" comment="init: 채팅 redis 환경 설정">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/24__11__14___4_54__________.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/24__11__14__오후_4_54,_업데이트_전에_커밋되지_않은_변경_내용_[변경]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MomsTicket/src/main/java/Team_15/MomsTicket/Config/ChatMessageListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MomsTicket/src/main/java/Team_15/MomsTicket/Config/MessagePublisher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MomsTicket/src/main/java/Team_15/MomsTicket/Config/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MomsTicket/src/main/java/Team_15/MomsTicket/Config/RedisSubscriber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MomsTicket/src/main/java/Team_15/MomsTicket/Config/WebSocketConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MomsTicket/src/main/java/Team_15/MomsTicket/Controller/ChatController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MomsTicket/src/main/java/Team_15/MomsTicket/DTO/ChatMessageDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MomsTicket/src/main/java/Team_15/MomsTicket/DTO/ChatRoomListGetResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MomsTicket/src/main/java/Team_15/MomsTicket/DTO/MessageSubDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MomsTicket/src/main/java/Team_15/MomsTicket/Repository/ChatMessageRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MomsTicket/src/main/java/Team_15/MomsTicket/Service/ChatMessageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MomsTicket/src/main/java/Team_15/MomsTicket/Service/ChatRoomService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MomsTicket/src/main/java/Team_15/MomsTicket/Entity/ChatRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/MomsTicket/src/main/java/Team_15/MomsTicket/Entity/ChatRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MomsTicket/src/main/java/Team_15/MomsTicket/Controller/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MomsTicket/src/main/java/Team_15/MomsTicket/Controller/ChatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MomsTicket/src/main/java/Team_15/MomsTicket/Entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/MomsTicket/src/main/java/Team_15/MomsTicket/Entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MomsTicket/src/main/java/Team_15/MomsTicket/Service/ChatRoomService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MomsTicket/src/main/java/Team_15/MomsTicket/Service/ChatRoomService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,19 +49,48 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "jsub1379"
+  }
+}]]></component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/ICONICTHON/2024_ICONICTHON_TEAM_15_BE.git",
-    "accountId": "5caf1962-2a63-40b1-8891-de250aad9da0"
+    "accountId": "12aaf41a-6889-4e03-9f94-ae234f461533"
   }
 }]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2orNf5tDaagl1OF1O2uij0KgHAI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.Build MomsTicket.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.MomsTicketApplication.executor": "Run",
     "git-widget-placeholder": "feature/chatting",
+    "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/kms32/IdeaProjects/2024-2-SWEngineering-IdolBom/2024_ICONICTHON_TEAM_15_BE",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -90,19 +100,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="MomsTicket" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="MomsTicket" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="MomsTicket" />
       <option name="ENV_FILES" value="" />
@@ -139,14 +136,6 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="launchJavascriptDebuger" value="false" />
       <method v="2" />
-    </configuration>
-    <configuration name="MomsTicketApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="MomsTicket.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="Team_15.MomsTicket.MomsTicketApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <configuration default="true" type="Tox" factoryName="Tox">
       <module name="MomsTicket" />
@@ -197,9 +186,36 @@
       <option name="USE_PATTERN" value="false" />
       <method v="2" />
     </configuration>
+    <configuration name="MomsTicketApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="MomsTicket.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="Team_15.MomsTicket.MomsTicketApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.20224.387" />
+        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-IU-242.20224.387" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <created>1731623837427</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731623837427</updated>
+      <workItem from="1731623840053" duration="8103000" />
+    </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

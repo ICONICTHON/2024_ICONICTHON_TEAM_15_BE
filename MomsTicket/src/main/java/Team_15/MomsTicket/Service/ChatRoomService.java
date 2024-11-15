@@ -19,7 +19,7 @@ public class ChatRoomService {
     private final SimpMessageSendingOperations messagingTemplate;
 
     @Autowired
-    public ChatRoomService(
+    public ChatRoomService( 
             RedisConfig redisConfig,
             RedisMessageListenerContainer redisMessageListenerContainer,
             RedisSubscriber redisSubscriber,

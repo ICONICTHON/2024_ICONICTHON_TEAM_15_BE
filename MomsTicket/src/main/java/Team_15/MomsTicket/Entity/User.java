@@ -30,8 +30,8 @@ public class User {
     private Idol idolID;
 
     @NotNull
-    @Column(name = "trustScore")
-    private Integer trustScore;
+    @Column(name = "trustScore", columnDefinition = "int default 50")
+    private Integer trustScore = 50;//50으롳 초기화
 
     @Size(max = 20)
     @Column(name = "accountNum", length = 20)
