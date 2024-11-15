@@ -29,7 +29,7 @@ public class Recruitment {
     @Column(name = "expiredDate", nullable = false)
     private Instant expiredDate;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "creatorID")
     private User creatorID;
 
@@ -65,7 +65,7 @@ public class Recruitment {
     private String additionalNote;
 
     @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "scheduleID", nullable = false)
     private Schedule scheduleID;
 

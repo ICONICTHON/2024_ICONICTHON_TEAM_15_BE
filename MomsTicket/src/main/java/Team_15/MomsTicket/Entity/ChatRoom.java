@@ -37,15 +37,14 @@ public class ChatRoom {
     @Column(name = "createdDate", nullable = false)
     private LocalDateTime createdDate;
 
-//    @NotNull
-//    // 안 씀
-//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-//    @JoinColumn(name = "recruitmentID", nullable = false)
-//    private Recruitment recruitmentID;
+    @NotNull
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "recruitmentID", nullable = false)
+    private Recruitment recruitmentID;
 
-//    @NotNull
-//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-//    @JoinColumn(name = "scheduleID", nullable = false)
-//    private Schedule scheduleID;
+    @NotNull
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
+    @JoinColumn(name = "scheduleID", nullable = false)
+    private Schedule scheduleID;
 
 }

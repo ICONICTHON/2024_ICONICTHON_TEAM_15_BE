@@ -17,7 +17,7 @@ public class Schedule {
     private Integer id;
 
     @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "idolID", nullable = false)
     private Idol idolID;
 
