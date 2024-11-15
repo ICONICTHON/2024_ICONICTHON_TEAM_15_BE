@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.Instant;
 
@@ -12,6 +13,7 @@ import java.time.Instant;
 @Entity
 public class Message {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "messageID", nullable = false)
     private Integer id;
 
@@ -20,6 +22,7 @@ public class Message {
     private String content;
 
     @NotNull
+    @CreationTimestamp
     @Column(name = "sendDate", nullable = false)
     private Instant sendDate;
 

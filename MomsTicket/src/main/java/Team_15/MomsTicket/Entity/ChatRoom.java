@@ -5,8 +5,10 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.time.Instant;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -16,9 +18,10 @@ public class ChatRoom {
     @Column(name = "chatRoomID", nullable = false)
     private Integer id;
 
-    @NotNull
-    @Column(name = "chatRoomType", nullable = false)
-    private Byte chatRoomType;
+    // 채팅방 유형 (안쓸 것)
+//    @NotNull
+//    @Column(name = "chatRoomType", nullable = false)
+//    private Byte chatRoomType;
 
     @Size(max = 255)
     @NotNull
@@ -30,8 +33,9 @@ public class ChatRoom {
     private String chatRoomImage;
 
     @NotNull
+    @CreatedDate
     @Column(name = "createdDate", nullable = false)
-    private Instant createdDate;
+    private LocalDateTime createdDate;
 
     @NotNull
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
