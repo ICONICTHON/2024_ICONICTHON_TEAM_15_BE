@@ -7,7 +7,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class MessageSubDto {
+public class MessageSubDTO {
     private String applicantID;
     private String agentID;
     private ChatMessageDTO chatMessageDTO;

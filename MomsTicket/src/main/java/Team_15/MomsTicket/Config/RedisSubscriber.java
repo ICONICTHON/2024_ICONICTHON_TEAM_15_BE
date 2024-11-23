@@ -8,7 +8,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
 import Team_15.MomsTicket.DTO.ChatMessageDTO;
-import Team_15.MomsTicket.DTO.MessageSubDto;
+import Team_15.MomsTicket.DTO.MessageSubDTO;
 import org.springframework.data.redis.connection.Message;
 
 import java.util.List;
@@ -38,7 +38,7 @@ public class RedisSubscriber implements MessageListener {
         try {
             // MessageSubDto에서 ChatMessageDTO를 추출하여 채팅방 구독자에게 발송
             ChatMessageDTO chatMessage =
-                    objectMapper.readValue(publishMessage, MessageSubDto.class).getChatMessageDTO();
+                    objectMapper.readValue(publishMessage, MessageSubDTO.class).getChatMessageDTO();
 
             // 채팅방을 구독한 클라이언트에게 메시지 발송
             messagingTemplate.convertAndSend(
@@ -53,7 +53,7 @@ public class RedisSubscriber implements MessageListener {
     // 채팅방 리스트를 최신화하여 발송
     public void sendRoomList(String publishMessage) {
         try {
-            MessageSubDto dto = objectMapper.readValue(publishMessage, MessageSubDto.class);
+            MessageSubDTO dto = objectMapper.readValue(publishMessage, MessageSubDTO.class);
 
             List<ChatRoomListGetResponse> chatRoomListGetResponseList = dto.getApplicantList();
             List<ChatRoomListGetResponse> chatRoomListGetResponseListPartner = dto.getAgentList();
