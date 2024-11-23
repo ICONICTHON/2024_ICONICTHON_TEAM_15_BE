@@ -53,9 +53,10 @@ public class ChatRoomService {
 
         ChatRoom chatRoom = createChatRoom(tempChatRoomId);
 
-        MessageSubDTO messageSubDto = new MessageSubDTO();
-        messageSubDto.setApplicantID(userId.toString());
-        messageSubDto.setAgentID(agentId.toString());
+        MessageSubDTO messageSubDto = MessageSubDTO.builder()
+                .applicantID(userId)
+                .agentID(agentId)
+                .build();
         return chatRoom;
     }
     /**
@@ -64,8 +65,9 @@ public class ChatRoomService {
      * @param applicantList 신청인의 채팅방 목록
      */
     public void updateApplicantChatRoomList(Long userId, List<ChatRoomListGetResponse> applicantList) {
-        MessageSubDTO messageSubDto = new MessageSubDTO();
-        messageSubDto.setApplicantList(applicantList);
+
+//        MessageSubDTO messageSubDto = new MessageSubDTO();
+//        messageSubDto.setApplicantList(applicantList);
         messagingTemplate.convertAndSend("/sub/chat/roomlist/" + userId, applicantList);
     }
 
@@ -75,8 +77,9 @@ public class ChatRoomService {
      * @param agentList 대리인의 채팅방 목록
      */
     public void updateAgentChatRoomList(Long agentId, List<ChatRoomListGetResponse> agentList) {
-        MessageSubDTO messageSubDto = new MessageSubDTO();
-        messageSubDto.setAgentList(agentList);
+
+//        MessageSubDTO messageSubDto = new MessageSubDTO();
+//        messageSubDto.setAgentList(agentList);
         messagingTemplate.convertAndSend("/sub/chat/roomlist/" + agentId, agentList);
     }
 }

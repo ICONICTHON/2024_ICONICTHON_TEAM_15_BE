@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.connection.MessageListener;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
 import Team_15.MomsTicket.DTO.ChatMessageDTO;
@@ -58,8 +57,8 @@ public class RedisSubscriber implements MessageListener {
             List<ChatRoomListGetResponse> chatRoomListGetResponseList = dto.getApplicantList();
             List<ChatRoomListGetResponse> chatRoomListGetResponseListPartner = dto.getAgentList();
 
-            String userId = dto.getApplicantID();
-            String partnerId = dto.getAgentID();
+            Long userId = dto.getApplicantID();
+            Long partnerId = dto.getAgentID();
 
             // 신청인 유저 채팅방 리스트 최신화 -> 내 계정에 보냄
             messagingTemplate.convertAndSend(

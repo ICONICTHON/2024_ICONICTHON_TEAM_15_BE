@@ -39,19 +39,14 @@ public class LoginController {
     @GetMapping("/login")
     public ResponseEntity<?> RegisterLogin(@RequestParam("code") String code) throws IOException {
         Map<String, Object> response = new LinkedHashMap<>();
-        User loginUser = new User();
 
         try {
             GetTokenDTO accessToken = loginService.getAccessTokenFromKakao(code);
             KakaoUserDTO userInfo = loginService.getKakaoInfo(accessToken.getAccessToken());
             log.info(userInfo.toString());
-            loginService.register(userInfo);
+            User user = loginService.register(userInfo);
 
-            loginUser.setId(userInfo.getId());
-            loginUser.setUserName(userInfo.getNickname());
-            loginUser.setProfileImage(userInfo.getProfile_image());
-
-            session.setAttribute("userInfo", loginUser);
+            session.setAttribute("userInfo", user);
             session.setMaxInactiveInterval(60 * 60 * 24);
 
             response.put("code", "SU");

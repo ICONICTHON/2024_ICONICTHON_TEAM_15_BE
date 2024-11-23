@@ -99,7 +99,7 @@ public class LoginService {
                 .build();
     }
 
-    public Optional<User> register(KakaoUserDTO kakaoUserDTO) {
+    public User register(KakaoUserDTO kakaoUserDTO) {
         Long id = kakaoUserDTO.getId();
         Optional<User> userInfo = userRepository.findById(id);
 
@@ -111,8 +111,11 @@ public class LoginService {
             newUser.setUserName(kakaoUserDTO.getNickname());
             newUser.setProfileImage(kakaoUserDTO.getProfile_image());
             userRepository.save(newUser);
+            return newUser;
         }
-        return userInfo;
+        else {
+            return userInfo.get();
+        }
     }
 
     public void setIdol(User user, int idol_id) {

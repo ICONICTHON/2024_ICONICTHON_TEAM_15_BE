@@ -1,15 +1,17 @@
 package Team_15.MomsTicket.DTO;
 
-import lombok.Getter;
-import lombok.Setter;
+
+import lombok.Builder;
+import lombok.Data;
 
 import java.util.List;
 
-@Getter
-@Setter
+
+@Data
+@Builder
 public class MessageSubDTO {
-    private String applicantID;
-    private String agentID;
+    private Long applicantID;
+    private Long agentID;
     private ChatMessageDTO chatMessageDTO;
     private List<ChatRoomListGetResponse> applicantList;
     private List<ChatRoomListGetResponse> agentList;
