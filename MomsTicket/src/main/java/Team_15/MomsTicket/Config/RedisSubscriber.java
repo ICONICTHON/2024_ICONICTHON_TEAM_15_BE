@@ -38,7 +38,7 @@ public class RedisSubscriber implements MessageListener {
         try {
             // MessageSubDto에서 ChatMessageDTO를 추출하여 채팅방 구독자에게 발송
             ChatMessageDTO chatMessage =
-                    objectMapper.readValue(publishMessage, MessageSubDto.class).getChatMessageDto();
+                    objectMapper.readValue(publishMessage, MessageSubDto.class).getChatMessageDTO();
 
             // 채팅방을 구독한 클라이언트에게 메시지 발송
             messagingTemplate.convertAndSend(
@@ -55,11 +55,11 @@ public class RedisSubscriber implements MessageListener {
         try {
             MessageSubDto dto = objectMapper.readValue(publishMessage, MessageSubDto.class);
 
-            List<ChatRoomListGetResponse> chatRoomListGetResponseList = dto.getapplicantList();
-            List<ChatRoomListGetResponse> chatRoomListGetResponseListPartner = dto.getagentList();
+            List<ChatRoomListGetResponse> chatRoomListGetResponseList = dto.getApplicantList();
+            List<ChatRoomListGetResponse> chatRoomListGetResponseListPartner = dto.getAgentList();
 
-            String userId = dto.getapplicantId();
-            String partnerId = dto.getagentId();
+            String userId = dto.getApplicantID();
+            String partnerId = dto.getAgentID();
 
             // 신청인 유저 채팅방 리스트 최신화 -> 내 계정에 보냄
             messagingTemplate.convertAndSend(

@@ -35,11 +35,11 @@ public class ChatRoomService {
     }
 
     /**
-     * 새로운 채팅방을 생성하고 Redis 구독 채널을 추가합니다.
+     * 새로운 채팅방을 생성하고 Redis 구독 채널을 추가
      * @param chatRoomId 생성할 채팅방 ID
      */
     public ChatRoom createChatRoom(Integer chatRoomId) {
-        // 동적으로 채팅방 생성
+        // 동적으로 채팅방 생성 - addChannel 메서드를 통해 Redis 구독 채널 추가
         redisConfig.addChannel(redisMessageListenerContainer, redisSubscriber, String.valueOf(chatRoomId));
         ChatRoom chatRoom = new ChatRoom();
         chatRoom.setId(chatRoomId);
@@ -47,15 +47,15 @@ public class ChatRoomService {
         return chatRoomRepository.save(chatRoom);
     }
 
-
+    // 테스트용 임시 채팅방 생성
     public ChatRoom createTemporaryChatRoom(Long userId, Long agentId) {
         Integer tempChatRoomId = 123;
 
         ChatRoom chatRoom = createChatRoom(tempChatRoomId);
 
         MessageSubDto messageSubDto = new MessageSubDto();
-        messageSubDto.setApplicantId(userId.toString());
-        messageSubDto.setAgentId(String.valueOf(agentId));
+        messageSubDto.setApplicantID(userId.toString());
+        messageSubDto.setAgentID(agentId.toString());
         return chatRoom;
     }
     /**
