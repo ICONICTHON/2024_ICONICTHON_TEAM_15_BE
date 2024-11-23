@@ -44,6 +44,21 @@ public class RedisConfig {
     }
 
 
+
+    @Bean
+    public MessageListenerAdapter listenerAdapterOnMessage(RedisSubscriber subscriber) {
+        return new MessageListenerAdapter(subscriber, "onMessage");
+    }
+
+    @Bean
+    public MessageListenerAdapter listenerAdapterChatRoomList(RedisSubscriber subscriber) {
+        return new MessageListenerAdapter(subscriber, "sendRoomList");
+    }
+    public void addChannel(RedisMessageListenerContainer redisMessageListenerContainer, RedisSubscriber subscriber, String chatRoomId) {
+        redisMessageListenerContainer.addMessageListener(listenerAdapterOnMessage(subscriber), new ChannelTopic(chatRoomId));
+            }
+    }
+
     /*
     @Bean
     // 실제 메시지를 처리하는 메서드인 sendMessage를 호출 (subscriber 설정)
@@ -56,11 +71,3 @@ public class RedisConfig {
         return new MessageListenerAdapter(subscriber, "sendRoomList");
     }
 */
-    @Bean
-    public MessageListenerAdapter listenerAdapterOnMessage(RedisSubscriber subscriber) {
-        return new MessageListenerAdapter(subscriber, "onMessage");
-    }
-    public void addChannel(RedisMessageListenerContainer redisMessageListenerContainer, RedisSubscriber subscriber, String chatRoomId) {
-        redisMessageListenerContainer.addMessageListener(listenerAdapterOnMessage(subscriber), new ChannelTopic(chatRoomId));
-            }
-    }

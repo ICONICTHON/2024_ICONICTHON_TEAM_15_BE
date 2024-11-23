@@ -1,11 +1,11 @@
 package Team_15.MomsTicket.DTO;
 
+
 import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.List;
+
 
 @Data
 @Builder
