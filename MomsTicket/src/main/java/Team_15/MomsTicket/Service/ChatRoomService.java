@@ -3,7 +3,7 @@ package Team_15.MomsTicket.Service;
 import Team_15.MomsTicket.Config.RedisConfig;
 import Team_15.MomsTicket.Config.RedisSubscriber;
 import Team_15.MomsTicket.DTO.ChatRoomListGetResponse;
-import Team_15.MomsTicket.DTO.MessageSubDto;
+import Team_15.MomsTicket.DTO.MessageSubDTO;
 import Team_15.MomsTicket.Entity.ChatRoom;
 import Team_15.MomsTicket.Repository.ChatRoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,9 +53,10 @@ public class ChatRoomService {
 
         ChatRoom chatRoom = createChatRoom(tempChatRoomId);
 
-        MessageSubDto messageSubDto = new MessageSubDto();
-        messageSubDto.setApplicantId(userId.toString());
-        messageSubDto.setAgentId(String.valueOf(agentId));
+        MessageSubDTO messageSubDto = MessageSubDTO.builder()
+                .applicantID(userId)
+                .agentID(agentId)
+                .build();
         return chatRoom;
     }
     /**
@@ -64,8 +65,8 @@ public class ChatRoomService {
      * @param applicantList 신청인의 채팅방 목록
      */
     public void updateApplicantChatRoomList(Long userId, List<ChatRoomListGetResponse> applicantList) {
-        MessageSubDto messageSubDto = new MessageSubDto();
-        messageSubDto.setApplicantList(applicantList);
+//        MessageSubDTO messageSubDto = new MessageSubDTO();
+//        messageSubDto.setApplicantList(applicantList);
         messagingTemplate.convertAndSend("/sub/chat/roomlist/" + userId, applicantList);
     }
 
@@ -75,8 +76,8 @@ public class ChatRoomService {
      * @param agentList 대리인의 채팅방 목록
      */
     public void updateAgentChatRoomList(Long agentId, List<ChatRoomListGetResponse> agentList) {
-        MessageSubDto messageSubDto = new MessageSubDto();
-        messageSubDto.setAgentList(agentList);
+//        MessageSubDTO messageSubDto = new MessageSubDTO();
+//        messageSubDto.setAgentList(agentList);
         messagingTemplate.convertAndSend("/sub/chat/roomlist/" + agentId, agentList);
     }
 }
